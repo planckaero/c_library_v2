@@ -4293,6 +4293,25 @@
       <field type="int8_t" name="custom1">Field for custom payload.</field>
       <field type="int8_t" name="custom2">Field for custom payload.</field>
     </message>
+    <message id="240" name="PLANCK_TAG_MEAS">
+      <description>landing tag camera info</description>
+      <field type="float" name="cxy_x">origin top/left of screen, positive right</field>
+      <field type="float" name="cxy_y">origin top/left of screen, positive down</field>
+      <field type="float" name="x">origin center of screen, positive right</field>
+      <field type="float" name="y">origin center of screen, positive backward</field>
+      <field type="float" name="z">origin center of screen, positive down (out of screen, towards tag)</field>
+      <field type="float[9]" name="rot_CF_TF"> </field>
+      <field type="float" name="x1">Pixel x location of the first point</field>
+      <field type="float" name="y1">Pixel y location of the first point</field>
+      <field type="float" name="x2">Pixel x location of the second point</field>
+      <field type="float" name="y2">Pixel y location of the second point</field>
+      <field type="float" name="x3">Pixel x location of the third point</field>
+      <field type="float" name="y3">Pixel y location of the third point</field>
+      <field type="float" name="x4">Pixel x location of the fourth point</field>
+      <field type="float" name="y4">Pixel y location of the fourth point</field>
+      <field type="float" name="tag_size">Size of the tag's edge in meters</field>
+      <field type="uint32_t" name="grab_time_ms">When the tag was grabbed</field>
+    </message>
     <message id="241" name="VIBRATION">
       <description>Vibration levels and accelerometer clipping</description>
       <field type="uint64_t" name="time_usec" units="us">Timestamp (micros since boot or Unix epoch)</field>

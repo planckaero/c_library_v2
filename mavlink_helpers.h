@@ -56,6 +56,7 @@ MAVLINK_HELPER void mavlink_reset_channel_status(uint8_t chan)
 {
 	mavlink_status_t *status = mavlink_get_channel_status(chan);
 	status->parse_state = MAVLINK_PARSE_STATE_IDLE;
+        printf(" MAVLINK_PARSE_STATE_GOT_LENGTH!!!!!!!!!!!!!77 ");
 }
 
 /**
@@ -584,7 +585,8 @@ MAVLINK_HELPER uint8_t mavlink_frame_char_buffer(mavlink_message_t* rxmsg,
 
 	int bufferIndex = 0;
 
-	status->msg_received = MAVLINK_FRAMING_INCOMPLETE;
+        status->msg_received = MAVLINK_FRAMING_INCOMPLETE;
+        //printf(" parse state %i ",status->parse_state);
 
 	switch (status->parse_state)
 	{
@@ -620,6 +622,7 @@ MAVLINK_HELPER uint8_t mavlink_frame_char_buffer(mavlink_message_t* rxmsg,
 			_mav_parse_error(status);
 			status->msg_received = 0;
 			status->parse_state = MAVLINK_PARSE_STATE_IDLE;
+                        printf(" MAVLINK_PARSE_STATE_GOT_LENGTH!!!!!!!!!!!!!00 ");
 		}
 		else
 		{
@@ -644,6 +647,7 @@ MAVLINK_HELPER uint8_t mavlink_frame_char_buffer(mavlink_message_t* rxmsg,
 			_mav_parse_error(status);
 			status->msg_received = 0;
 			status->parse_state = MAVLINK_PARSE_STATE_IDLE;
+                        //printf(" MAVLINK_PARSE_STATE_GOT_LENGTH!!!!!!!!!!!!!11 ");
 			break;
 		}
 		mavlink_update_checksum(rxmsg, c);
@@ -688,6 +692,7 @@ MAVLINK_HELPER uint8_t mavlink_frame_char_buffer(mavlink_message_t* rxmsg,
                     {
 			_mav_parse_error(status);
 			status->parse_state = MAVLINK_PARSE_STATE_IDLE;
+                        printf(" MAVLINK_PARSE_STATE_GOT_LENGTH!!!!!!!!!!!!!22 ");
 			break;
                     }
 #endif
@@ -715,6 +720,7 @@ MAVLINK_HELPER uint8_t mavlink_frame_char_buffer(mavlink_message_t* rxmsg,
 		{
 			_mav_parse_error(status);
 			status->parse_state = MAVLINK_PARSE_STATE_IDLE;
+                        printf(" MAVLINK_PARSE_STATE_GOT_LENGTH!!!!!!!!!!!!!33 ");
 			break;
                 }
 #endif
@@ -774,10 +780,13 @@ MAVLINK_HELPER uint8_t mavlink_frame_char_buffer(mavlink_message_t* rxmsg,
 
 				// If the CRC is already wrong, don't overwrite msg_received.
 				if (status->msg_received != MAVLINK_FRAMING_BAD_CRC) {
+                                     printf(" MAVLINK_PARSE_STATE_GOT_LENGTH %i !!!!!!!!!!!!!44 \n ",status->msg_received );
 					status->msg_received = MAVLINK_FRAMING_BAD_SIGNATURE;
 				}
 			}
+//                        printf(" status->parse_state %i msg recieved %i !!!!!!!!!!!!!44 \n ",status->parse_state,status->msg_received );
 			status->parse_state = MAVLINK_PARSE_STATE_IDLE;
+
 			memcpy(r_message, rxmsg, sizeof(mavlink_message_t));
 		}
 		break;
@@ -801,6 +810,7 @@ MAVLINK_HELPER uint8_t mavlink_frame_char_buffer(mavlink_message_t* rxmsg,
 				status->msg_received = MAVLINK_FRAMING_BAD_SIGNATURE;
 			}
 			status->parse_state = MAVLINK_PARSE_STATE_IDLE;
+                        printf(" MAVLINK_PARSE_STATE_GOT_LENGTH!!!!!!!!!!!!!55 ");
 			memcpy(r_message, rxmsg, sizeof(mavlink_message_t));
 		}
 		break;
@@ -820,6 +830,7 @@ MAVLINK_HELPER uint8_t mavlink_frame_char_buffer(mavlink_message_t* rxmsg,
 		if (status->packet_rx_success_count == 0) status->packet_rx_drop_count = 0;
 		// Count this packet as received
 		status->packet_rx_success_count++;
+             //   printf(" status->parse_state %i msg recieved %i !!!!!!!!!!!!!derp \n ",status->parse_state,status->msg_received );
 	}
 
 	r_message->len = rxmsg->len; // Provide visibility on how far we are into current msg
@@ -966,6 +977,7 @@ MAVLINK_HELPER unsigned int mavlink_get_proto_version(uint8_t chan)
 MAVLINK_HELPER uint8_t mavlink_parse_char(uint8_t chan, uint8_t c, mavlink_message_t* r_message, mavlink_status_t* r_mavlink_status)
 {
     uint8_t msg_received = mavlink_frame_char(chan, c, r_message, r_mavlink_status);
+      //printf("msg_received %i \n",msg_received);
     if (msg_received == MAVLINK_FRAMING_BAD_CRC ||
 	msg_received == MAVLINK_FRAMING_BAD_SIGNATURE) {
 	    // we got a bad CRC. Treat as a parse failure
@@ -974,6 +986,7 @@ MAVLINK_HELPER uint8_t mavlink_parse_char(uint8_t chan, uint8_t c, mavlink_messa
 	    _mav_parse_error(status);
 	    status->msg_received = MAVLINK_FRAMING_INCOMPLETE;
 	    status->parse_state = MAVLINK_PARSE_STATE_IDLE;
+            printf(" MAVLINK_PARSE_STATE_GOT_LENGTH!!!!!!!!!!!!!66 ");
 	    if (c == MAVLINK_STX)
 	    {
 		    status->parse_state = MAVLINK_PARSE_STATE_GOT_STX;
