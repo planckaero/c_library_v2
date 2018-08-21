@@ -5,22 +5,22 @@
 
 MAVPACKED(
 typedef struct __mavlink_planck_tag_meas_t {
- float cxy_x; /*< origin top/left of screen, positive right*/
- float cxy_y; /*< origin top/left of screen, positive down*/
- float x; /*< origin center of screen, positive right*/
- float y; /*< origin center of screen, positive backward*/
- float z; /*< origin center of screen, positive down (out of screen, towards tag)*/
- float rot_CF_TF[9]; /*<  */
- float x1; /*< Pixel x location of the first point*/
- float y1; /*< Pixel y location of the first point*/
- float x2; /*< Pixel x location of the second point*/
- float y2; /*< Pixel y location of the second point*/
- float x3; /*< Pixel x location of the third point*/
- float y3; /*< Pixel y location of the third point*/
- float x4; /*< Pixel x location of the fourth point*/
- float y4; /*< Pixel y location of the fourth point*/
- float tag_size; /*< Size of the tag's edge in meters*/
- uint32_t grab_time_ms; /*< When the tag was grabbed*/
+ float cxy_x; /*<  origin top/left of screen, positive right*/
+ float cxy_y; /*<  origin top/left of screen, positive down*/
+ float x; /*<  origin center of screen, positive right*/
+ float y; /*<  origin center of screen, positive backward*/
+ float z; /*<  origin center of screen, positive down (out of screen, towards tag)*/
+ float rot_CF_TF[9]; /*<   */
+ float x1; /*<  Pixel x location of the first point*/
+ float y1; /*<  Pixel y location of the first point*/
+ float x2; /*<  Pixel x location of the second point*/
+ float y2; /*<  Pixel y location of the second point*/
+ float x3; /*<  Pixel x location of the third point*/
+ float y3; /*<  Pixel y location of the third point*/
+ float x4; /*<  Pixel x location of the fourth point*/
+ float y4; /*<  Pixel y location of the fourth point*/
+ float tag_size; /*<  Size of the tag's edge in meters*/
+ uint32_t grab_time_ms; /*<  When the tag was grabbed*/
 }) mavlink_planck_tag_meas_t;
 
 #define MAVLINK_MSG_ID_PLANCK_TAG_MEAS_LEN 96
@@ -86,22 +86,22 @@ typedef struct __mavlink_planck_tag_meas_t {
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param msg The MAVLink message to compress the data into
  *
- * @param cxy_x origin top/left of screen, positive right
- * @param cxy_y origin top/left of screen, positive down
- * @param x origin center of screen, positive right
- * @param y origin center of screen, positive backward
- * @param z origin center of screen, positive down (out of screen, towards tag)
- * @param rot_CF_TF  
- * @param x1 Pixel x location of the first point
- * @param y1 Pixel y location of the first point
- * @param x2 Pixel x location of the second point
- * @param y2 Pixel y location of the second point
- * @param x3 Pixel x location of the third point
- * @param y3 Pixel y location of the third point
- * @param x4 Pixel x location of the fourth point
- * @param y4 Pixel y location of the fourth point
- * @param tag_size Size of the tag's edge in meters
- * @param grab_time_ms When the tag was grabbed
+ * @param cxy_x  origin top/left of screen, positive right
+ * @param cxy_y  origin top/left of screen, positive down
+ * @param x  origin center of screen, positive right
+ * @param y  origin center of screen, positive backward
+ * @param z  origin center of screen, positive down (out of screen, towards tag)
+ * @param rot_CF_TF   
+ * @param x1  Pixel x location of the first point
+ * @param y1  Pixel y location of the first point
+ * @param x2  Pixel x location of the second point
+ * @param y2  Pixel y location of the second point
+ * @param x3  Pixel x location of the third point
+ * @param y3  Pixel y location of the third point
+ * @param x4  Pixel x location of the fourth point
+ * @param y4  Pixel y location of the fourth point
+ * @param tag_size  Size of the tag's edge in meters
+ * @param grab_time_ms  When the tag was grabbed
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_planck_tag_meas_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
@@ -157,22 +157,22 @@ static inline uint16_t mavlink_msg_planck_tag_meas_pack(uint8_t system_id, uint8
  * @param component_id ID of this component (e.g. 200 for IMU)
  * @param chan The MAVLink channel this message will be sent over
  * @param msg The MAVLink message to compress the data into
- * @param cxy_x origin top/left of screen, positive right
- * @param cxy_y origin top/left of screen, positive down
- * @param x origin center of screen, positive right
- * @param y origin center of screen, positive backward
- * @param z origin center of screen, positive down (out of screen, towards tag)
- * @param rot_CF_TF  
- * @param x1 Pixel x location of the first point
- * @param y1 Pixel y location of the first point
- * @param x2 Pixel x location of the second point
- * @param y2 Pixel y location of the second point
- * @param x3 Pixel x location of the third point
- * @param y3 Pixel y location of the third point
- * @param x4 Pixel x location of the fourth point
- * @param y4 Pixel y location of the fourth point
- * @param tag_size Size of the tag's edge in meters
- * @param grab_time_ms When the tag was grabbed
+ * @param cxy_x  origin top/left of screen, positive right
+ * @param cxy_y  origin top/left of screen, positive down
+ * @param x  origin center of screen, positive right
+ * @param y  origin center of screen, positive backward
+ * @param z  origin center of screen, positive down (out of screen, towards tag)
+ * @param rot_CF_TF   
+ * @param x1  Pixel x location of the first point
+ * @param y1  Pixel y location of the first point
+ * @param x2  Pixel x location of the second point
+ * @param y2  Pixel y location of the second point
+ * @param x3  Pixel x location of the third point
+ * @param y3  Pixel y location of the third point
+ * @param x4  Pixel x location of the fourth point
+ * @param y4  Pixel y location of the fourth point
+ * @param tag_size  Size of the tag's edge in meters
+ * @param grab_time_ms  When the tag was grabbed
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_planck_tag_meas_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
@@ -254,22 +254,22 @@ static inline uint16_t mavlink_msg_planck_tag_meas_encode_chan(uint8_t system_id
  * @brief Send a planck_tag_meas message
  * @param chan MAVLink channel to send the message
  *
- * @param cxy_x origin top/left of screen, positive right
- * @param cxy_y origin top/left of screen, positive down
- * @param x origin center of screen, positive right
- * @param y origin center of screen, positive backward
- * @param z origin center of screen, positive down (out of screen, towards tag)
- * @param rot_CF_TF  
- * @param x1 Pixel x location of the first point
- * @param y1 Pixel y location of the first point
- * @param x2 Pixel x location of the second point
- * @param y2 Pixel y location of the second point
- * @param x3 Pixel x location of the third point
- * @param y3 Pixel y location of the third point
- * @param x4 Pixel x location of the fourth point
- * @param y4 Pixel y location of the fourth point
- * @param tag_size Size of the tag's edge in meters
- * @param grab_time_ms When the tag was grabbed
+ * @param cxy_x  origin top/left of screen, positive right
+ * @param cxy_y  origin top/left of screen, positive down
+ * @param x  origin center of screen, positive right
+ * @param y  origin center of screen, positive backward
+ * @param z  origin center of screen, positive down (out of screen, towards tag)
+ * @param rot_CF_TF   
+ * @param x1  Pixel x location of the first point
+ * @param y1  Pixel y location of the first point
+ * @param x2  Pixel x location of the second point
+ * @param y2  Pixel y location of the second point
+ * @param x3  Pixel x location of the third point
+ * @param y3  Pixel y location of the third point
+ * @param x4  Pixel x location of the fourth point
+ * @param y4  Pixel y location of the fourth point
+ * @param tag_size  Size of the tag's edge in meters
+ * @param grab_time_ms  When the tag was grabbed
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
@@ -390,7 +390,7 @@ static inline void mavlink_msg_planck_tag_meas_send_buf(mavlink_message_t *msgbu
 /**
  * @brief Get field cxy_x from planck_tag_meas message
  *
- * @return origin top/left of screen, positive right
+ * @return  origin top/left of screen, positive right
  */
 static inline float mavlink_msg_planck_tag_meas_get_cxy_x(const mavlink_message_t* msg)
 {
@@ -400,7 +400,7 @@ static inline float mavlink_msg_planck_tag_meas_get_cxy_x(const mavlink_message_
 /**
  * @brief Get field cxy_y from planck_tag_meas message
  *
- * @return origin top/left of screen, positive down
+ * @return  origin top/left of screen, positive down
  */
 static inline float mavlink_msg_planck_tag_meas_get_cxy_y(const mavlink_message_t* msg)
 {
@@ -410,7 +410,7 @@ static inline float mavlink_msg_planck_tag_meas_get_cxy_y(const mavlink_message_
 /**
  * @brief Get field x from planck_tag_meas message
  *
- * @return origin center of screen, positive right
+ * @return  origin center of screen, positive right
  */
 static inline float mavlink_msg_planck_tag_meas_get_x(const mavlink_message_t* msg)
 {
@@ -420,7 +420,7 @@ static inline float mavlink_msg_planck_tag_meas_get_x(const mavlink_message_t* m
 /**
  * @brief Get field y from planck_tag_meas message
  *
- * @return origin center of screen, positive backward
+ * @return  origin center of screen, positive backward
  */
 static inline float mavlink_msg_planck_tag_meas_get_y(const mavlink_message_t* msg)
 {
@@ -430,7 +430,7 @@ static inline float mavlink_msg_planck_tag_meas_get_y(const mavlink_message_t* m
 /**
  * @brief Get field z from planck_tag_meas message
  *
- * @return origin center of screen, positive down (out of screen, towards tag)
+ * @return  origin center of screen, positive down (out of screen, towards tag)
  */
 static inline float mavlink_msg_planck_tag_meas_get_z(const mavlink_message_t* msg)
 {
@@ -440,7 +440,7 @@ static inline float mavlink_msg_planck_tag_meas_get_z(const mavlink_message_t* m
 /**
  * @brief Get field rot_CF_TF from planck_tag_meas message
  *
- * @return  
+ * @return   
  */
 static inline uint16_t mavlink_msg_planck_tag_meas_get_rot_CF_TF(const mavlink_message_t* msg, float *rot_CF_TF)
 {
@@ -450,7 +450,7 @@ static inline uint16_t mavlink_msg_planck_tag_meas_get_rot_CF_TF(const mavlink_m
 /**
  * @brief Get field x1 from planck_tag_meas message
  *
- * @return Pixel x location of the first point
+ * @return  Pixel x location of the first point
  */
 static inline float mavlink_msg_planck_tag_meas_get_x1(const mavlink_message_t* msg)
 {
@@ -460,7 +460,7 @@ static inline float mavlink_msg_planck_tag_meas_get_x1(const mavlink_message_t* 
 /**
  * @brief Get field y1 from planck_tag_meas message
  *
- * @return Pixel y location of the first point
+ * @return  Pixel y location of the first point
  */
 static inline float mavlink_msg_planck_tag_meas_get_y1(const mavlink_message_t* msg)
 {
@@ -470,7 +470,7 @@ static inline float mavlink_msg_planck_tag_meas_get_y1(const mavlink_message_t* 
 /**
  * @brief Get field x2 from planck_tag_meas message
  *
- * @return Pixel x location of the second point
+ * @return  Pixel x location of the second point
  */
 static inline float mavlink_msg_planck_tag_meas_get_x2(const mavlink_message_t* msg)
 {
@@ -480,7 +480,7 @@ static inline float mavlink_msg_planck_tag_meas_get_x2(const mavlink_message_t* 
 /**
  * @brief Get field y2 from planck_tag_meas message
  *
- * @return Pixel y location of the second point
+ * @return  Pixel y location of the second point
  */
 static inline float mavlink_msg_planck_tag_meas_get_y2(const mavlink_message_t* msg)
 {
@@ -490,7 +490,7 @@ static inline float mavlink_msg_planck_tag_meas_get_y2(const mavlink_message_t* 
 /**
  * @brief Get field x3 from planck_tag_meas message
  *
- * @return Pixel x location of the third point
+ * @return  Pixel x location of the third point
  */
 static inline float mavlink_msg_planck_tag_meas_get_x3(const mavlink_message_t* msg)
 {
@@ -500,7 +500,7 @@ static inline float mavlink_msg_planck_tag_meas_get_x3(const mavlink_message_t* 
 /**
  * @brief Get field y3 from planck_tag_meas message
  *
- * @return Pixel y location of the third point
+ * @return  Pixel y location of the third point
  */
 static inline float mavlink_msg_planck_tag_meas_get_y3(const mavlink_message_t* msg)
 {
@@ -510,7 +510,7 @@ static inline float mavlink_msg_planck_tag_meas_get_y3(const mavlink_message_t* 
 /**
  * @brief Get field x4 from planck_tag_meas message
  *
- * @return Pixel x location of the fourth point
+ * @return  Pixel x location of the fourth point
  */
 static inline float mavlink_msg_planck_tag_meas_get_x4(const mavlink_message_t* msg)
 {
@@ -520,7 +520,7 @@ static inline float mavlink_msg_planck_tag_meas_get_x4(const mavlink_message_t* 
 /**
  * @brief Get field y4 from planck_tag_meas message
  *
- * @return Pixel y location of the fourth point
+ * @return  Pixel y location of the fourth point
  */
 static inline float mavlink_msg_planck_tag_meas_get_y4(const mavlink_message_t* msg)
 {
@@ -530,7 +530,7 @@ static inline float mavlink_msg_planck_tag_meas_get_y4(const mavlink_message_t* 
 /**
  * @brief Get field tag_size from planck_tag_meas message
  *
- * @return Size of the tag's edge in meters
+ * @return  Size of the tag's edge in meters
  */
 static inline float mavlink_msg_planck_tag_meas_get_tag_size(const mavlink_message_t* msg)
 {
@@ -540,7 +540,7 @@ static inline float mavlink_msg_planck_tag_meas_get_tag_size(const mavlink_messa
 /**
  * @brief Get field grab_time_ms from planck_tag_meas message
  *
- * @return When the tag was grabbed
+ * @return  When the tag was grabbed
  */
 static inline uint32_t mavlink_msg_planck_tag_meas_get_grab_time_ms(const mavlink_message_t* msg)
 {
