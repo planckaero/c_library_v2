@@ -11,7 +11,7 @@
 #endif
 
 #undef MAVLINK_THIS_XML_IDX
-#define MAVLINK_THIS_XML_IDX 0
+#define MAVLINK_THIS_XML_IDX 2
 
 #ifdef __cplusplus
 extern "C" {
@@ -56,20 +56,6 @@ typedef enum MAV_DATA_STREAM_PLANCK
    MAV_DATA_STREAM_PLANCK_STATEINFO=99, /* Enable Planck stateinfo data | */
    MAV_DATA_STREAM_PLANCK_ENUM_END=100, /*  | */
 } MAV_DATA_STREAM_PLANCK;
-#endif
-
-/** @brief  */
-#ifndef HAVE_ENUM_MAV_CMD
-#define HAVE_ENUM_MAV_CMD
-typedef enum MAV_CMD
-{
-   MAV_CMD_NAV_PLANCK_TAKEOFF=9001, /*  |Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-   MAV_CMD_NAV_PLANCK_RTB=9002, /*  |Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-   MAV_CMD_NAV_PLANCK_WINGMAN=9003, /*  |Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-   MAV_CMD_NAV_PLANCK_LAND=9004, /*  |Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-   MAV_CMD_NAV_PLANCK_TRACK=9005, /*  |Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
-   MAV_CMD_ENUM_END=9006, /*  | */
-} MAV_CMD;
 #endif
 
 /** @brief  */
@@ -141,7 +127,7 @@ typedef enum PLANCK_ANAFI_SUBMODE
 
 
 #undef MAVLINK_THIS_XML_IDX
-#define MAVLINK_THIS_XML_IDX 0
+#define MAVLINK_THIS_XML_IDX 2
 
 #if MAVLINK_THIS_XML_IDX == MAVLINK_PRIMARY_XML_IDX
 # define MAVLINK_MESSAGE_INFO {MAVLINK_MESSAGE_INFO_PLANCK_STATEINFO, MAVLINK_MESSAGE_INFO_PLANCK_LANDING_PLATFORM_STATE, MAVLINK_MESSAGE_INFO_PLANCK_STATUS, MAVLINK_MESSAGE_INFO_PLANCK_CMD_MSG, MAVLINK_MESSAGE_INFO_PLANCK_CMD_REQUEST, MAVLINK_MESSAGE_INFO_PLANCK_LANDING_TAG_ESTIMATE_NED, MAVLINK_MESSAGE_INFO_PLANCK_LANDING_TAG_MEASUREMENT_BODY, MAVLINK_MESSAGE_INFO_PLANCK_LANDING_TAG_ESTIMATE_GPS}
