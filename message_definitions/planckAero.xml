@@ -1,5 +1,8 @@
 <?xml version='1.0'?>
 <mavlink>
+  <include>common.xml</include>
+  <include>parrot.xml</include>
+  <dialect>2</dialect>
     <!-- PlanckAerosystems contact info:                            -->
     <!-- company URL: http://planckaero.com/                        -->
     <!-- email contact: info@planckaero.com.                        -->

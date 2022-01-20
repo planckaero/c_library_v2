@@ -11,7 +11,7 @@
 #endif
 
 #undef MAVLINK_THIS_XML_IDX
-#define MAVLINK_THIS_XML_IDX 0
+#define MAVLINK_THIS_XML_IDX 2
 
 #ifdef __cplusplus
 extern "C" {
@@ -33,18 +33,6 @@ extern "C" {
 
 // ENUM DEFINITIONS
 
-
-/** @brief  */
-#ifndef HAVE_ENUM_MAV_CMD
-#define HAVE_ENUM_MAV_CMD
-typedef enum MAV_CMD
-{
-   MAV_CMD_SET_VIEW_MODE=50000, /* Set the view mode |View mode type (see MAV_VIEW_MODE_TYPE)| Index of the ROI if view mode type is VIEW_MODE_TYPE_ROI. Empty otherwise.| Empty| Empty| Empty| Empty| Empty|  */
-   MAV_CMD_SET_STILL_CAPTURE_MODE=50001, /* Set the still capture mode |Still capture mode type (see MAV_STILL_CAPTURE_MODE_TYPE)| Timelapse interval in milliseconds if still capture mode type is STILL_CAPTURE_MODE_TYPE_TIMELAPSE. Interval in centimeters between each capture if still capture mode type is STILL_CAPTURE_MODE_TYPE_GPS_POSITION. Overlapping percentage between each capture if still capture mode is STILL_CAPTURE_MODE_TYPE_AUTOMATIC_OVERLAP.| Empty| Empty| Empty| Empty| Empty|  */
-   MAV_CMD_SET_PHOTO_SENSORS=50002, /* Set the photo sensors that are/will be used. |Photo sensors bitfield (see MAV_PHOTO_SENSORS_FLAG)| Empty| Empty| Empty| Empty| Empty| Empty|  */
-   MAV_CMD_ENUM_END=50003, /*  | */
-} MAV_CMD;
-#endif
 
 /** @brief Type of the view mode. This is how the vehicle should behave to set its orientation. */
 #ifndef HAVE_ENUM_MAV_VIEW_MODE_TYPE
@@ -102,7 +90,7 @@ typedef enum MAV_PHOTO_SENSORS_FLAG
 
 
 #undef MAVLINK_THIS_XML_IDX
-#define MAVLINK_THIS_XML_IDX 0
+#define MAVLINK_THIS_XML_IDX 2
 
 #if MAVLINK_THIS_XML_IDX == MAVLINK_PRIMARY_XML_IDX
 # define MAVLINK_MESSAGE_INFO {MAVLINK_MESSAGE_INFO_COPILOTING_CUSTOM}
