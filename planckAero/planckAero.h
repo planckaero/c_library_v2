@@ -11,20 +11,20 @@
 #endif
 
 #undef MAVLINK_THIS_XML_IDX
-#define MAVLINK_THIS_XML_IDX 3
+#define MAVLINK_THIS_XML_IDX 0
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-#include "../common/common.h"
+
 // MESSAGE LENGTHS AND CRCS
 
 #ifndef MAVLINK_MESSAGE_LENGTHS
-#define MAVLINK_MESSAGE_LENGTHS {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 36, 22, 19, 3, 96, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+#define MAVLINK_MESSAGE_LENGTHS {}
 #endif
 
 #ifndef MAVLINK_MESSAGE_CRCS
-#define MAVLINK_MESSAGE_CRCS {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 107, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 67, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 82, 252, 133, 175, 211, 195, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+#define MAVLINK_MESSAGE_CRCS {{9001, 203, 88, 88, 3, 84, 85}, {9002, 228, 36, 36, 0, 0, 0}, {9003, 252, 8, 8, 3, 0, 1}, {9004, 72, 53, 53, 3, 50, 51}, {9005, 211, 27, 27, 3, 24, 25}, {9006, 214, 50, 50, 3, 48, 49}, {9007, 162, 38, 38, 3, 36, 37}, {9008, 88, 26, 26, 3, 24, 25}, {9009, 207, 109, 109, 3, 104, 105}}
 #endif
 
 #include "../protocol.h"
@@ -34,57 +34,123 @@ extern "C" {
 // ENUM DEFINITIONS
 
 
+/** @brief Planck system and component IDs */
+#ifndef HAVE_ENUM_PLANCK_COMP_IDS
+#define HAVE_ENUM_PLANCK_COMP_IDS
+typedef enum PLANCK_COMP_IDS
+{
+   PLANCK_BLACKBOX_COMP_ID=32, /*  | */
+   PLANCK_GPS_COMP_ID=34, /*  | */
+   PLANCK_ANAFI_SUP_COMP_ID=41, /*  | */
+   PLANCK_COT_COMP_ID=69, /*  | */
+   PLANCK_CTRL_COMP_ID=90, /*  | */
+   PLANCK_COMP_IDS_ENUM_END=91, /*  | */
+} PLANCK_COMP_IDS;
+#endif
+
+/** @brief Additional data stream for planck data. */
+#ifndef HAVE_ENUM_MAV_DATA_STREAM_PLANCK
+#define HAVE_ENUM_MAV_DATA_STREAM_PLANCK
+typedef enum MAV_DATA_STREAM_PLANCK
+{
+   MAV_DATA_STREAM_PLANCK_STATEINFO=99, /* Enable Planck stateinfo data | */
+   MAV_DATA_STREAM_PLANCK_ENUM_END=100, /*  | */
+} MAV_DATA_STREAM_PLANCK;
+#endif
+
 /** @brief  */
-#ifndef HAVE_ENUM_PLANCK_STATUS_MODE
-#define HAVE_ENUM_PLANCK_STATUS_MODE
-typedef enum PLANCK_STATUS_MODE
+#ifndef HAVE_ENUM_COPTER_MODE
+#define HAVE_ENUM_COPTER_MODE
+typedef enum COPTER_MODE
 {
-   PLANCK_IDLE=0, /*  | */
-   PLANCK_TAKEOFF=1, /*  | */
-   PLANCK_STAB=2, /*  | */
-   PLANCK_RTB=3, /*  | */
-   PLANCK_SEARCHING=4, /*  | */
-   PLANCK_LAND_READY=5, /*  | */
-   PLANCK_LAND=6, /*  | */
-   PLANCK_ORBIT=7, /*  | */
-   PLANCK_LEAD_FOLLOW=8, /*  | */
-   PLANCK_STATUS_MODE_ENUM_END=9, /*  | */
-} PLANCK_STATUS_MODE;
+   COPTER_MODE_PLANCKTRACKING=24, /*  | */
+   COPTER_MODE_PLANCKRTB=25, /*  | */
+   COPTER_MODE_PLANCKLAND=26, /*  | */
+   COPTER_MODE_PLANCKWINGMAN=27, /*  | */
+   COPTER_MODE_ENUM_END=28, /*  | */
+} COPTER_MODE;
 #endif
 
-/** @brief These flags encode the MAV mode. */
-#ifndef HAVE_ENUM_PLANCK_STATUS_FAILSAFE
-#define HAVE_ENUM_PLANCK_STATUS_FAILSAFE
-typedef enum PLANCK_STATUS_FAILSAFE
+/** @brief  */
+#ifndef HAVE_ENUM_MAV_CMD
+#define HAVE_ENUM_MAV_CMD
+typedef enum MAV_CMD
 {
-   RC_OK=1, /*  | */
-   COMMBOX_OK=2, /*  | */
-   BATTERY_OK=4, /*  | */
-   COMMBOX_GPS_OK=8, /*  | */
-   PLANCK_STATUS_FAILSAFE_ENUM_END=9, /*  | */
-} PLANCK_STATUS_FAILSAFE;
+   MAV_CMD_NAV_PLANCK_TAKEOFF=9001, /*  |Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+   MAV_CMD_NAV_PLANCK_RTB=9002, /*  |Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+   MAV_CMD_NAV_PLANCK_WINGMAN=9003, /*  |Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+   MAV_CMD_NAV_PLANCK_LAND=9004, /*  |Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+   MAV_CMD_NAV_PLANCK_TRACK=9005, /*  |Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)| Reserved (default:0)|  */
+   MAV_CMD_ENUM_END=9006, /*  | */
+} MAV_CMD;
 #endif
 
-/** @brief These flags encode the MAV mode. */
-#ifndef HAVE_ENUM_PLANCK_STATUS_CONTROLLER
-#define HAVE_ENUM_PLANCK_STATUS_CONTROLLER
-typedef enum PLANCK_STATUS_CONTROLLER
+/** @brief  */
+#ifndef HAVE_ENUM_PLANCK_CMD_REQ_TYPE
+#define HAVE_ENUM_PLANCK_CMD_REQ_TYPE
+typedef enum PLANCK_CMD_REQ_TYPE
 {
-   TAG_ESTIMATOR_OK=1, /*  | */
-   BOAT_ESTIMATOR_OK=2, /*  | */
-   PLANCK_STATUS_CONTROLLER_ENUM_END=3, /*  | */
-} PLANCK_STATUS_CONTROLLER;
+   PLANCK_CMD_REQ_TAKEOFF=0, /*  | */
+   PLANCK_CMD_REQ_RTB=1, /*  | */
+   PLANCK_CMD_REQ_LAND=2, /*  | */
+   PLANCK_CMD_REQ_MOVE_TARGET=3, /*  | */
+   PLANCK_CMD_REQ_STOP=4, /*  | */
+   PLANCK_CMD_REQ_TYPE_ENUM_END=5, /*  | */
+} PLANCK_CMD_REQ_TYPE;
 #endif
 
-/** @brief These flags encode the MAV mode. */
-#ifndef HAVE_ENUM_PLANCK_TRACKING_TARGET
-#define HAVE_ENUM_PLANCK_TRACKING_TARGET
-typedef enum PLANCK_TRACKING_TARGET
+/** @brief  */
+#ifndef HAVE_ENUM_PLANCK_CTRL_FLIGHTMODE
+#define HAVE_ENUM_PLANCK_CTRL_FLIGHTMODE
+typedef enum PLANCK_CTRL_FLIGHTMODE
 {
-   LANDING_PLATFORM=0, /*  | */
-   TARGET=1, /*  | */
-   PLANCK_TRACKING_TARGET_ENUM_END=2, /*  | */
-} PLANCK_TRACKING_TARGET;
+   PLANCK_CTRL_FLIGHTMODE_IDLE=0, /*  | */
+   PLANCK_CTRL_FLIGHTMODE_TAKEOFF=1, /*  | */
+   PLANCK_CTRL_FLIGHTMODE_RETURN_TO_BOAT=2, /*  | */
+   PLANCK_CTRL_FLIGHTMODE_LAND=3, /*  | */
+   PLANCK_CTRL_FLIGHTMODE_TRACKING=4, /*  | */
+   PLANCK_CTRL_FLIGHTMODE_ENUM_END=5, /*  | */
+} PLANCK_CTRL_FLIGHTMODE;
+#endif
+
+/** @brief  */
+#ifndef HAVE_ENUM_PLANCK_ANAFI_SUBMODE
+#define HAVE_ENUM_PLANCK_ANAFI_SUBMODE
+typedef enum PLANCK_ANAFI_SUBMODE
+{
+   PLANCK_ANAFI_SUBMODE_PLANCKIDLE=0, /*  | */
+   PLANCK_ANAFI_SUBMODE_PLANCKTAKEOFF=1, /*  | */
+   PLANCK_ANAFI_SUBMODE_PLANCKTRACK=2, /*  | */
+   PLANCK_ANAFI_SUBMODE_PLANCKRTB=3, /*  | */
+   PLANCK_ANAFI_SUBMODE_PLANCKLAND=4, /*  | */
+   PLANCK_ANAFI_SUBMODE_PLANCKWINGMAN=5, /*  | */
+   PLANCK_ANAFI_SUBMODE_PLANCKTAKEOFFDRIFT=6, /*  | */
+   PLANCK_ANAFI_SUBMODE_ENUM_END=7, /*  | */
+} PLANCK_ANAFI_SUBMODE;
+#endif
+
+/** @brief Frame used the ACE system */
+#ifndef HAVE_ENUM_PLANCK_FRAME
+#define HAVE_ENUM_PLANCK_FRAME
+typedef enum PLANCK_FRAME
+{
+   PLANCK_FRAME_VNED=0, /* Origin: Center of gravity of the drone / X: North / Y: East / Z: Down | */
+   PLANCK_FRAME_BF=1, /* Origin: Center of gravity of the drone / X:  Forward / Y: Right / Z: Down (Axis fixed to the body of the aircraft) | */
+   PLANCK_FRAME_CF=2, /* Origin: Center of the camera / X: Along width / Y: Along height / Z: Outside forward (Axis fixed to the body of the camera) | */
+   PLANCK_FRAME_ENUM_END=3, /*  | */
+} PLANCK_FRAME;
+#endif
+
+/** @brief Camera used by the ACE system */
+#ifndef HAVE_ENUM_PLANCK_CAMERA
+#define HAVE_ENUM_PLANCK_CAMERA
+typedef enum PLANCK_CAMERA
+{
+   PLANCK_CAMERA_UNSPECIFIED=0, /*  | */
+   PLANCK_CAMERA_PI=1, /*  | */
+   PLANCK_CAMERA_GIMBAL_MISB=2, /*  | */
+   PLANCK_CAMERA_ENUM_END=3, /*  | */
+} PLANCK_CAMERA;
 #endif
 
 // MAVLINK VERSION
@@ -99,24 +165,25 @@ typedef enum PLANCK_TRACKING_TARGET
 #endif
 
 // MESSAGE DEFINITIONS
-#include "./mavlink_msg_state_info.h"
-#include "./mavlink_msg_target_state.h"
-#include "./mavlink_msg_version_query_response.h"
-#include "./mavlink_msg_landing_platform_heartbeat.h"
-#include "./mavlink_msg_landing_platform_state.h"
-#include "./mavlink_msg_orbit_command.h"
-#include "./mavlink_msg_lead_follow_command.h"
+#include "./mavlink_msg_planck_stateinfo.h"
+#include "./mavlink_msg_planck_landing_platform_state.h"
 #include "./mavlink_msg_planck_status.h"
-//#include "./mavlink_msg_planck_tag_meas.h"
+#include "./mavlink_msg_planck_cmd_msg.h"
+#include "./mavlink_msg_planck_cmd_request.h"
+#include "./mavlink_msg_planck_landing_tag_estimate_ned.h"
+#include "./mavlink_msg_planck_landing_tag_measurement_body.h"
+#include "./mavlink_msg_planck_landing_tag_estimate_gps.h"
+#include "./mavlink_msg_planck_landing_target_measurement.h"
 
 // base include
-#include "../common/common.h"
+
 
 #undef MAVLINK_THIS_XML_IDX
-#define MAVLINK_THIS_XML_IDX 3
+#define MAVLINK_THIS_XML_IDX 0
 
 #if MAVLINK_THIS_XML_IDX == MAVLINK_PRIMARY_XML_IDX
-# define MAVLINK_MESSAGE_INFO {{"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, MAVLINK_MESSAGE_INFO_STATE_INFO, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, MAVLINK_MESSAGE_INFO_TARGET_STATE, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, MAVLINK_MESSAGE_INFO_VERSION_QUERY_RESPONSE, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, MAVLINK_MESSAGE_INFO_LANDING_PLATFORM_HEARTBEAT, MAVLINK_MESSAGE_INFO_LANDING_PLATFORM_STATE, MAVLINK_MESSAGE_INFO_ORBIT_COMMAND, MAVLINK_MESSAGE_INFO_LEAD_FOLLOW_COMMAND, MAVLINK_MESSAGE_INFO_PLANCK_STATUS, MAVLINK_MESSAGE_INFO_PLANCK_TAG_MEAS, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}, {"EMPTY",0,{{"","",MAVLINK_TYPE_CHAR,0,0,0}}}}
+# define MAVLINK_MESSAGE_INFO {MAVLINK_MESSAGE_INFO_PLANCK_STATEINFO, MAVLINK_MESSAGE_INFO_PLANCK_LANDING_PLATFORM_STATE, MAVLINK_MESSAGE_INFO_PLANCK_STATUS, MAVLINK_MESSAGE_INFO_PLANCK_CMD_MSG, MAVLINK_MESSAGE_INFO_PLANCK_CMD_REQUEST, MAVLINK_MESSAGE_INFO_PLANCK_LANDING_TAG_ESTIMATE_NED, MAVLINK_MESSAGE_INFO_PLANCK_LANDING_TAG_MEASUREMENT_BODY, MAVLINK_MESSAGE_INFO_PLANCK_LANDING_TAG_ESTIMATE_GPS, MAVLINK_MESSAGE_INFO_PLANCK_LANDING_TARGET_MEASUREMENT}
+# define MAVLINK_MESSAGE_NAMES {{ "PLANCK_CMD_MSG", 9004 }, { "PLANCK_CMD_REQUEST", 9005 }, { "PLANCK_LANDING_PLATFORM_STATE", 9002 }, { "PLANCK_LANDING_TAG_ESTIMATE_GPS", 9008 }, { "PLANCK_LANDING_TAG_ESTIMATE_NED", 9006 }, { "PLANCK_LANDING_TAG_MEASUREMENT_BODY", 9007 }, { "PLANCK_LANDING_TARGET_MEASUREMENT", 9009 }, { "PLANCK_STATEINFO", 9001 }, { "PLANCK_STATUS", 9003 }}
 # if MAVLINK_COMMAND_24BIT
 #  include "../mavlink_get_info.h"
 # endif
